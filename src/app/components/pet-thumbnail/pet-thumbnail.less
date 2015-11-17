@@ -1,0 +1,46 @@
+.pet-thumbnail {
+   button.close {
+     opacity: 0.5;
+     font-size: 16px;
+   }
+  .thumbnail-cell {
+    min-height: 150px;
+
+    &.description {
+      h3 {
+        margin-top: 0;
+      }
+
+      ul {
+        margin-top: 20px;
+        padding-left: 0;
+
+        li {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    &.price {
+      position: relative;
+      button {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      &.description {
+        margin-top: 10px;
+        min-height: auto;
+      }
+
+      &.price {
+        button {
+          .col-xs-12;
+        }
+      }
+    }
+  }
+}

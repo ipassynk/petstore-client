@@ -1,0 +1,12 @@
+<form class="form-horizontal" ng-submit="vm.search()">
+  <div class="form-group">
+    <label for="petId" class="col-sm-2 control-label">Pet Identifier</label>
+    <div class="col-sm-8 col-xs-12">
+      <input type="text" ng-model="vm.petId" class="form-control" id="petId" placeholder="Input pet identifier">
+      <span id="helpBlock" class="help-block">You need to know pet identifier to find your awesome pet</span>
+    </div>
+    <div class="col-sm-2">
+      <button type="submit" class="btn btn-primary col-xs-12">Search</button>
+    </div>
+  </div>
+</form>
