@@ -8,23 +8,26 @@
       </button>
     </div>
     <div class="panel-body">
-      <div class="col-sm-4 thumbnail-cell">
+
+      <div class="col-sm-5 thumbnail-cell">
         <ps-pet-carousel images="vm.active.pet.photoUrls"></ps-pet-carousel>
-<!--        <div ng-repeat="photo in vm.active.pet.photoUrls">
-            <img class="img-thumbnail img-responsive" ng-src="{{ photo }}" alt="pet image"/>
-        </div>-->
       </div>
+
       <div class="col-sm-4 thumbnail-cell description text-center">
           <h3>{{ vm.active.pet.name }}</h3>
           <ul>
             <li data-ng-repeat="tag in vm.active.pet.tags" class="badge">{{ tag.name }}</li>
           </ul>
+        <p>The Skinny Pig is an almost hairless breed of Guinea pig. Skinny pigs typically have hair on their muzzles, feet, and legs, but are hairless over the remainder of their bodies. Some of them have a thin covering of fuzzy hair on their backs as well. </p>
       </div>
 
-      <div class="col-sm-4 thumbnail-cell price">
+      <div class="col-sm-3 thumbnail-cell price">
         <div class="row">
-        <h3 class="text-center panel-title price">$9<span class="price-cents">99</span><span class="price-month">mo.</span></h3>
-        <button class="btn btn-success" ng-if="vm.active.pet.status === 'available'">Add to Cart</button>
+        <h3 class="text-center panel-title price">$89<span class="price-cents">99</span></h3>
+          <div class="pet-rating">
+            <rating ng-model="4" max="5" titles="['one','two','three']" ></rating>
+          </div>
+        <button class="btn btn-success col-sm-6" ng-if="vm.active.pet.status === 'available'">Add to Cart</button>
         </div>
       </div>
     </div>

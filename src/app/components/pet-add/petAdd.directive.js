@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -21,14 +21,32 @@
     return directive;
 
     /** @ngInject */
-    function PetAddController(Pet) {
+    function PetAddController($scope) {
       var vm = this;
+
       vm.add = add;
 
+      function reset() {
+        $scope.$broadcast('show-errors-reset');
+        vm.data = {};
+      }
+
       function add() {
-        var pet = new Pet();
-        pet.$save().then(function(aPet) {
-          alertService.addAlert({type: 'success', msg: "Well done! You successfully added this pet"});
+        function tagMap(val, i) {
+          return {id: i, name: val};
+        }
+
+        var pet = new Pet({
+          name: vm.data.name,
+          tags: vm.data.tags.split(' ').map(tagMap),
+          status: vm.data.status ? 'available' : 'out of stock',
+          photoUrls: [vm.data.image]
+        });
+        pet.$save().then(function (resp) {
+          alertService.addAlert({type: 'success', msg: "Well done! You successfully added the pet + " + pet.name});
+          reset();
+        })['catch'](function () {
+          alertService.addAlert({type: 'danger', msg: "Sorry for operation failed. Try again!"});
         });
       }
     }

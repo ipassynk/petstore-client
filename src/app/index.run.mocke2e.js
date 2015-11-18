@@ -24,8 +24,10 @@
       },
       "name": "Haireless guinea pig",
       "photoUrls": [
-        "assets/pets/haireless_guinea1.jpg",
-        "assets/pets/haireless_guinea2.jpg"
+        "assets/pets/1.jpg",
+        "assets/pets/2.jpg",
+        "assets/pets/3.jpg",
+        "assets/pets/4.jpg"
       ],
       "tags": [
         {
@@ -44,7 +46,6 @@
       "status": "available"
     };
     $httpBackend.whenGET('/petstore/api/pet/1').respond(getPet);
-
 
     var delPet = {};
     $httpBackend.whenDELETE('/petstore/api/pet/1').respond(delPet);

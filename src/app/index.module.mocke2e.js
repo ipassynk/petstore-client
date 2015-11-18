@@ -3,6 +3,6 @@
 
   angular
     .module('petstore', ['ngAnimate', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria',
-      'ngResource', 'ui.router', 'ui.bootstrap', 'ngMockE2E']);
+      'ngResource', 'ui.router', 'ui.bootstrap', 'ui.bootstrap.showErrors', 'ngMockE2E']);
 
 })();

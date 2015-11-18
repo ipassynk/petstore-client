@@ -24,7 +24,6 @@
 
     /** @ngInject */
     function PetCarouselController() {
-      debugger;
       var vm = this;
       vm.slides = [];
 

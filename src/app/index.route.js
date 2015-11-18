@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -8,11 +8,30 @@
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'app/main/main.html',
+      .state('container', {
+        abstract: true,
+        templateUrl: 'app/states/main/main.html',
         controller: 'MainController',
         controllerAs: 'main'
+      })
+      .state('container.home', {
+        url: '/',
+        views: {
+          'main@container': {
+            templateUrl: 'app/states/home/home.html',
+            controller: 'HomeController',
+            controllerAs: 'home'
+          }
+        }
+      }).state('container.add', {
+        url: '/add',
+        views: {
+          'main@container': {
+            templateUrl: 'app/states/add/add.html',
+            controller: 'AddController',
+            controllerAs: 'add'
+          }
+        }
       });
 
     $urlRouterProvider.otherwise('/');

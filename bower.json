@@ -14,7 +14,8 @@
     "angular-bootstrap": "~0.13.4",
     "animate.css": "~3.4.0",
     "angular": "~1.4.2",
-    "angular-mocks": "~1.4.7"
+    "angular-mocks": "~1.4.7",
+    "ng-flow": "~2.6.1"
   },
   "overrides": {
     "bootstrap": {
@@ -31,5 +32,8 @@
   "resolutions": {
     "jquery": "~2.1.4",
     "angular": "~1.4.2"
+  },
+  "devDependencies": {
+    "angular-bootstrap-show-errors": "~2.3.0"
   }
 }
