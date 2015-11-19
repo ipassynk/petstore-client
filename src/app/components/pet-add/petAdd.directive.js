@@ -42,11 +42,15 @@
           status: vm.data.status ? 'available' : 'out of stock',
           photoUrls: [vm.data.image]
         });
+
+        vm.busy = true;
         pet.$save().then(function (resp) {
-          alertService.addAlert({type: 'success', msg: "Well done! You successfully added the pet + " + pet.name});
+          alertService.addAlert({type: 'success', msg: "Well done! You successfully added the pet: " + vm.data.name});
           reset();
         })['catch'](function () {
           alertService.addAlert({type: 'danger', msg: "Sorry for operation failed. Try again!"});
+        }) ['finally'](function () {
+          vm.busy = false;
         });
       }
     }

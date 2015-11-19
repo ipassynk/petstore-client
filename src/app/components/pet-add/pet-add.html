@@ -30,7 +30,8 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-primary col-sm-3" ng-disabled="userForm.$invalid">Add Pet</button>
+      <a ui-sref="container.home" class="btn btn-link" >Cancel</a>
+      <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid" ps-busy-button="{{vm.busy}}">Add Pet</button>
     </div>
   </div>
 </form>
