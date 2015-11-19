@@ -12,7 +12,10 @@
 
     this.delete = function (petId) {
       Pet.delete({petId: petId}).$promise.then(function () {
-        alertService.addAlert({type: 'success', msg: "Well done! You successfully deleted this pet."});
+        alertService.addAlert({
+          type: 'success',
+          msg: "Well done! You successfully deleted " + that.pet.name
+        });
         that.pet = null;
       })['catch'](function (error) {
         alertService.addAlert({

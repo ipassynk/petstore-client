@@ -45,7 +45,7 @@
 
         vm.busy = true;
         pet.$save().then(function (resp) {
-          alertService.addAlert({type: 'success', msg: "Well done! You successfully added the pet: " + vm.data.name});
+          alertService.addAlert({type: 'success', msg: "Well done! You successfully added " + vm.data.name});
           reset();
         })['catch'](function () {
           alertService.addAlert({type: 'danger', msg: "Sorry, the operation is failed. Try again!"});
