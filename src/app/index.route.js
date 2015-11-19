@@ -13,6 +13,9 @@
         templateUrl: 'app/states/main/main.html',
         controller: 'MainController',
         controllerAs: 'main'
+/*        data: {
+          requireLogin: true
+        }*/
       })
       .state('container.home', {
         url: '/',

@@ -38,8 +38,8 @@
 
         var pet = new Pet({
           name: vm.data.name,
-          tags: vm.data.tags.split(' ').map(tagMap),
-          status: vm.data.status ? 'available' : 'out of stock',
+          tags: vm.data.tags ? vm.data.tags.split(' ').map(tagMap) : [],
+          status: vm.data.status ? 'available' : 'outofstock',
           photoUrls: [vm.data.image]
         });
 
@@ -48,7 +48,7 @@
           alertService.addAlert({type: 'success', msg: "Well done! You successfully added the pet: " + vm.data.name});
           reset();
         })['catch'](function () {
-          alertService.addAlert({type: 'danger', msg: "Sorry for operation failed. Try again!"});
+          alertService.addAlert({type: 'danger', msg: "Sorry, the operation is failed. Try again!"});
         }) ['finally'](function () {
           vm.busy = false;
         });

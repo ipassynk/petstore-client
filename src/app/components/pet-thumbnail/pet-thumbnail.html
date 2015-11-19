@@ -9,7 +9,7 @@
     </div>
     <div class="panel-body">
 
-      <div class="col-sm-5 thumbnail-cell">
+      <div class="col-sm-5 thumbnail-cell thumbnail-carousel">
         <ps-pet-carousel images="vm.active.pet.photoUrls"></ps-pet-carousel>
       </div>
 
@@ -25,7 +25,7 @@
         <div class="row">
         <h3 class="text-center panel-title price">$89<span class="price-cents">99</span></h3>
           <div class="pet-rating">
-            <rating ng-model="4" max="5" titles="['one','two','three']" ></rating>
+            <rating ng-model="vm.rating" max="5" titles="['one','two','three']" ></rating>
           </div>
         <button class="btn btn-success col-sm-6" ng-if="vm.active.pet.status === 'available'">Add to Cart</button>
         </div>

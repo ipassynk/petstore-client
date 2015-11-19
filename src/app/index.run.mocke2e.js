@@ -19,10 +19,6 @@
 
     var getPet = {
       "id": 1,
-      "category": {
-        "id": 0,
-        "name": "string"
-      },
       "name": "Haireless guinea pig",
       "photoUrls": [
         "assets/pets/1.jpg",

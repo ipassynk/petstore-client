@@ -21,6 +21,7 @@
     /** @ngInject */
     function PetThumbnailController() {
       var vm = this;
+      vm.rating = 4;
       vm.active = petActive;
 
       vm.delete = petActive.delete;
