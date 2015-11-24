@@ -1,5 +1,6 @@
 # petstore-client
-PetStore Client Demo Implementation
+
+AngularJS PetStore Client Demo Implementation
 
 
 To run with petstore-server
