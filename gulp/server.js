@@ -11,13 +11,14 @@ var util = require('util');
 
 var proxyMiddleware = require('http-proxy-middleware');
 
-function browserSyncInit(baseDir, browser) {
+function browserSyncInit(baseDir, browser, startHtml) {
   browser = browser === undefined ? 'default' : browser;
 
   var routes = null;
   if(baseDir === conf.paths.src || (util.isArray(baseDir) && baseDir.indexOf(conf.paths.src) !== -1)) {
     routes = {
-      '/bower_components': 'bower_components'
+      '/bower_components': 'bower_components',
+      '/node_modules': 'node_modules'
     };
   }
 
@@ -40,7 +41,7 @@ function browserSyncInit(baseDir, browser) {
     });
 
   browserSync.instance = browserSync.init({
-    startPath: '/',
+    startPath: '/' + (startHtml || ''),
     server: server,
     browser: browser,
     port: 3005
@@ -65,4 +66,8 @@ gulp.task('serve:e2e', ['inject'], function () {
 
 gulp.task('serve:e2e-dist', ['build'], function () {
   browserSyncInit(conf.paths.dist, []);
+});
+
+gulp.task('serve:specs', ['build:specs'], function () {
+  browserSyncInit([path.join(conf.paths.tmp, '/serve'), conf.paths.src], null, 'specs.html');
 });

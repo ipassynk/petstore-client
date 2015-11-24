@@ -31,6 +31,8 @@ module.exports = function(config) {
   var configuration = {
     files: listFiles(),
 
+    exclude: ['src/app/index.module.mocke2e.js', 'src/app/index.run.mocke2e.js'],
+
     singleRun: true,
 
     autoWatch: false,
@@ -42,7 +44,7 @@ module.exports = function(config) {
 
     logLevel: 'WARN',
 
-    frameworks: ['jasmine', 'angular-filesort'],
+    frameworks: ['angular-filesort', 'mocha', 'chai', 'sinon', 'chai-sinon'],
 
     angularFilesort: {
       whitelist: [path.join(conf.paths.src, '/**/!(*.html|*.spec|*.mock).js')]
@@ -50,6 +52,7 @@ module.exports = function(config) {
 
     browsers : ['PhantomJS'],
 
+    /*
     plugins : [
       'karma-phantomjs-launcher',
       'karma-angular-filesort',
@@ -57,6 +60,7 @@ module.exports = function(config) {
       'karma-jasmine',
       'karma-ng-html2js-preprocessor'
     ],
+    */
 
     coverageReporter: {
       type : 'html',

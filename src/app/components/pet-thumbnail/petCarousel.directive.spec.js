@@ -1,32 +1,35 @@
-(function() {
+(function () {
   'use strict';
 
-  describe('directive petCarousel', function() {
-    // var $window;
-    var vm;
-    var el;
-
-    beforeEach(module('petstore'));
-    beforeEach(inject(function($compile, $rootScope) {
-      // spyOn(_$window_, 'moment').and.callThrough();
-      // $window = _$window_;
-
-      el = angular.element('<ps-pet-carousel images="[]"></ps-pet-carousel>');
-
-      $compile(el)($rootScope.$new());
-      $rootScope.$digest();
-      //vm = el.isolateScope().vm;
-    }));
-
-    it('should be compiled', function() {
-      expect(el.html()).not.toEqual(null);
+  describe('directive psPetCarousel', function () {
+    var photoUrls = [
+      "assets/pets/1.jpg",
+      "assets/pets/2.jpg",
+      "assets/pets/3.jpg",
+      "assets/pets/4.jpg"
+    ];
+    beforeEach(function () {
+      bard.appModule('petstore');
+      bard.inject('$compile', '$rootScope');
     });
 
-    it('should have isolate scope object with instanciate members', function() {
-     // expect(vm).toEqual(jasmine.any(Object));
+    it('should be compiled', function () {
+      var scope = $rootScope.$new();
+      scope.photoUrls = photoUrls;
+      var el = $compile('<ps-pet-carousel images="photoUrls"></ps-pet-carousel>')(scope);
+      $rootScope.$digest();
+      var carousel = el.find('.carousel');
+      expect(carousel).to.exist;
+    });
 
-      //expect(vm.images).toEqual(jasmine.any(Array));
-      //expect(vm.images).toEqual(timeInMs);
+    it('should be created slides from photoUrls', function () {
+      var scope = $rootScope.$new();
+      scope.photoUrls = photoUrls;
+      var el = $compile('<ps-pet-carousel images="photoUrls"></ps-pet-carousel>')(scope);
+      $rootScope.$digest();
+      var directiveScope = el.children().scope();
+      expect(directiveScope.vm.slides.length).to.equal(photoUrls.length);
     });
   });
 })();
+
