@@ -6,7 +6,7 @@
     .directive('psPetThumbnail', petThumbnail);
 
   /** @ngInject */
-  function petThumbnail(petActive, Pet, alertService) {
+  function petThumbnail(petActive) {
     var directive = {
       restrict: 'E',
       templateUrl: 'app/components/pet-thumbnail/pet-thumbnail.html',

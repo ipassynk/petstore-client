@@ -3,7 +3,7 @@
 
   /**
    */
-  describe('directive busy-button', function () {
+  describe('directive psBusyButton', function () {
     beforeEach(function () {
       bard.appModule('petstore');
       bard.inject('$compile', '$rootScope');
