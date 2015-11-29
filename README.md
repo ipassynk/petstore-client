@@ -2,6 +2,8 @@
 
 AngularJS PetStore Client Demo Implementation. 
 
+See live demo at [Julia PetStore](http://ipassynk.github.io/#/)
+
 Implements the following api:
 * find pet by id
 * delete a pet
