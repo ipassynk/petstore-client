@@ -1,6 +1,11 @@
-# petstore-client
+# AngularJS PetStore
 
-AngularJS PetStore Client Demo Implementation
+AngularJS PetStore Client Demo Implementation. 
+
+Implements the following api:
+* find pet by id
+* delete a pet
+* create a pet
 
 
 To run with petstore-server
@@ -10,12 +15,15 @@ Start petstore-server (see my repository) and run gulp serve that will use it to
 
 To run with mockeE2E
 -------------------------------------
-	
+```
 gulp serve --mock
+```
 
 To run unit tests in spec html runner
 -------------------------------------
-	
+```	
 gulp serve:specs
+```
+
 
 

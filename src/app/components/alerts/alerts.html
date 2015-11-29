@@ -1,4 +1,4 @@
-<div ng-show="vm.alerts.length">
+<div ng-show="vm.alerts.length" class="col-sm-8 col-sm-offset-2">
   <alert ng-repeat="alert in vm.alerts"
              type="{{alert.type}}" close="vm.closeAlert($index)">{{ alert.msg }}</alert>
 </div>

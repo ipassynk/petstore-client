@@ -34,11 +34,11 @@
       function add() {
         function tagMap(val, i) {
           return {id: i, name: val};
-        }
+        };
 
         var pet = new Pet({
           name: vm.data.name,
-          tags: vm.data.tags ? vm.data.tags.split(' ').map(tagMap) : [],
+          tags: vm.data.tags ? JSON.parse(vm.data.tags).map(tagMap) : [],
           status: vm.data.status ? 'available' : 'outofstock',
           photoUrls: [vm.data.image]
         });
