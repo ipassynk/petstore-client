@@ -22,7 +22,7 @@
       scope.loading = true;
       var el = $compile('<button ps-busy-button="{{ loading }}">Hi</button>')(scope);
       $rootScope.$digest();
-      expect(el.text().trim()).to.equal('Working. Please wait...');
+      expect(el.text().trim()).to.equal('Working...');
     });
 
     it('should be in notmail state if loading is false', function () {
@@ -43,7 +43,7 @@
 
       scope.loading = true;
       $rootScope.$digest();
-      expect(el.text().trim()).to.equal('Working. Please wait...');
+      expect(el.text().trim()).to.equal('Working...');
     });
   });
 })();

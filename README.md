@@ -9,6 +9,17 @@ Implements the following api:
 * delete a pet
 * create a pet
 
+The purpose of this application is to show angular capabilities. 
+The application does not persist newly created pets but always returns the same mock.
+
+The applications uses:
+
+* route-ui for routing between home and add pages
+* mocke2e for mocking all api
+* 9 unit tests for controllers, directives
+* Accessibility for live elements, hidden arias, busy button 
+
+
 
 To run with petstore-server
 -------------------------------------
