@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -24,11 +24,16 @@
     function PetSearchController(Pet) {
       var vm = this;
       vm.petId;
+      vm.busy = false;
       vm.search = search;
 
       function search() {
-        Pet.get({'petId': vm.petId}).$promise.then(function(aPet) {
+        vm.busy = true;
+
+        Pet.get({'petId': vm.petId}).$promise.then(function (aPet) {
           petActive.pet = aPet;
+        })['finally'](function () {
+          vm.busy = false;
         });
       }
     }
