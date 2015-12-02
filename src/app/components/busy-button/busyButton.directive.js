@@ -15,16 +15,19 @@
     return directive;
 
     function link(scope, element, attrs) {
+      var busyAria =
+        angular.element('<div role="region" class="sr-only" aria-live="assertive"></div>');
+      element.parent().after(busyAria);
       var orig = element.text();
 
       attrs.$observe('psBusyButton', function (val) {
         if (val === 'true') {
-          element.attr('aria-busy', 'true');
+          busyAria.text('Busy working button. Please wait...');
           element.text('Working...');
           element.prop('disable', true);
         }
         else {
-          element.attr('aria-busy', 'false');
+          busyAria.text('');
           element.prop('disable', false);
           element.text(orig);
         }

@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -13,7 +13,8 @@
       controller: PetThumbnailController,
       controllerAs: 'vm',
       bindToController: true,
-      scope: true
+      scope: true,
+      link: link
     };
 
     return directive;
@@ -25,6 +26,13 @@
       vm.active = petActive;
 
       vm.delete = petActive.delete;
+    }
+
+    function link(scope) {
+      // when the element is removed - focus on body???
+      scope.$watch('$destroy', function () {
+        angular.element('body').focus();
+      });
     }
   }
 
