@@ -10,7 +10,7 @@
     $stateProvider
       .state('container', {
         abstract: true,
-        templateUrl: 'app/states/main/main.html',
+        templateUrl: 'app/layout/main/main.html',
         controller: 'MainController',
         controllerAs: 'main'
 /*        data: {

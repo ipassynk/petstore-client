@@ -7,21 +7,26 @@
 
 .pet-home-jumbotron {
   .jumbotron {
-    h1{
+    perspective: 600px;
+
+    h1 {
       color: maroon;
       text-shadow: 1px 1px 40px;
-      font-size:3em;
+      font-size: 3em;
+      font-family: 'Amatic SC', cursive;
+      margin-bottom: 20px;
     }
     background-color: white;
 
     img {
       margin-bottom: 10px;
-      transition: tranform 50s;
+      transition: transform 2s ease-in-out;
+      transform-style: preserve-3d;
     }
 
     img:hover {
       zoom: 1;
-      transform: rotate(180deg);
+      transform: rotateX(5deg) rotateY(5deg) rotateZ(3600deg);
     }
   }
 

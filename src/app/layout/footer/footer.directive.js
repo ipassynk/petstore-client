@@ -9,7 +9,7 @@
   function psFooter() {
     var directive = {
       restrict: 'AE',
-      templateUrl: 'app/components/footer/footer.html',
+      templateUrl: 'app/layout/footer/footer.html',
       controller: FooterController,
       controllerAs: 'vm',
       scope: true

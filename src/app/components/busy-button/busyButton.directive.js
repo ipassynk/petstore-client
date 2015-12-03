@@ -24,11 +24,13 @@
         if (val === 'true') {
           busyAria.text('Busy working button. Please wait...');
           element.text('Working...');
+          element.prop('aria-hidden', 'true');
           element.prop('disable', true);
         }
         else {
           busyAria.text('');
           element.prop('disable', false);
+          element.prop('aria-hidden', 'false');
           element.text(orig);
         }
       });
