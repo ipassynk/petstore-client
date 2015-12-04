@@ -1,15 +1,14 @@
-<nav class="navbar navbar-static-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" ui-sref="container.home">
-        <img src="assets/images/petstore_logo.png" alt="Julia PetStore Logo"/>
-      </a>
-    </div>
+<nav class="navbar navbar-static-top navbar-inverse col-sm-12" role="navigation" id="ps-navbar">
+  <a class="navbar-brand pull-left" ui-sref="container.home">
+    <img src="assets/images/petstore_logo.png" alt="Julia PetStore Logo"/>
+  </a>
 
-    <div>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a ui-sref="container.add"><span class="glyphicon glyphicon-plus"></span>  PET</a></li>
-      </ul>
-    </div>
-  </div>
+  <ul class="nav navbar-nav pull-right">
+    <li class="nav-item">
+      <a class="nav-link" ui-sref="container.add">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        New Pet
+      </a>
+    </li>
+  </ul>
 </nav>

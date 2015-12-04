@@ -8,6 +8,7 @@
   /** @ngInject */
   function navbar() {
     var directive = {
+      replace:true,
       restrict: 'E',
       templateUrl: 'app/layout/navbar/navbar.html',
       controller: NavbarController,
