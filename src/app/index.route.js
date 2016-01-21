@@ -10,29 +10,20 @@
     $stateProvider
       .state('container', {
         abstract: true,
-        templateUrl: 'app/layout/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-/*        data: {
-          requireLogin: true
-        }*/
+        template: '<main></main>'
       })
       .state('container.home', {
         url: '/',
         views: {
           'main@container': {
-            templateUrl: 'app/states/home/home.html',
-            controller: 'HomeController',
-            controllerAs: 'home'
+            template: '<home></home>'
           }
         }
       }).state('container.add', {
         url: '/add',
         views: {
           'main@container': {
-            templateUrl: 'app/states/add/add.html',
-            controller: 'AddController',
-            controllerAs: 'add'
+            templateUrl: '<add></add>'
           }
         }
       });
