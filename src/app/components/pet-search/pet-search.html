@@ -1,10 +1,9 @@
 <form class="form-horizontal" ng-submit="vm.search()">
   <div class="form-group">
-    <label for="petId" class="col-sm-2 col-sm-offset-1 control-label">Pet Identifier</label>
+    <label for="petId" class="col-sm-2 col-sm-offset-1 control-label">Pet</label>
     <div class="col-sm-6 col-xs-12 search-box" role="search">
       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-      <input type="text" ng-model="vm.petId" class="form-control" id="petId" placeholder="Type here to search by pet identifier">
-      <span id="helpBlock" class="help-block">You need to know pet identifier to find your new friend!</span>
+      <input type="text" ng-model="vm.petId" class="form-control" id="petId" placeholder="Search by pet identifier (example: 1)">
     </div>
     <div class="col-sm-2">
       <button type="submit" class="btn btn-dark col-xs-12" ps-busy-button="{{vm.busy}}" aria-controls="pet-thumbnail">Search</button>

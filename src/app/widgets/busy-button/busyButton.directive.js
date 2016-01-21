@@ -1,6 +1,14 @@
 (function () {
   'use strict';
 
+  /**
+   * While the button is busy:
+   * 1. change label to working
+   * 2. make the button disabled
+   * 3. add busy indicator for associate live aria (accessability)
+   * 4. make the button hidden for accessability.
+   *    otherwise screen reader will read "unavailable" because the button become disabled
+   */
   angular
     .module('petstore')
     .directive('psBusyButton', psBusyButton);
@@ -36,5 +44,4 @@
       });
     }
   }
-
 })();
