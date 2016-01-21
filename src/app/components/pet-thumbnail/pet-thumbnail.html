@@ -16,7 +16,7 @@
       <div class="col-sm-4 thumbnail-cell description text-center">
           <h3>{{ vm.active.pet.name }}</h3>
           <ul>
-            <li data-ng-repeat="tag in vm.active.pet.tags" class="badge">{{ tag.name }}</li>
+            <li ng-repeat="tag in vm.active.pet.tags" class="badge">{{ ::tag.name }}</li>
           </ul>
         <p>The Skinny Pig is an almost hairless breed of Guinea pig. Skinny pigs typically have hair on their muzzles, feet, and legs, but are hairless over the remainder of their bodies. Some of them have a thin covering of fuzzy hair on their backs as well. </p>
       </div>

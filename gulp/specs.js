@@ -1,6 +1,7 @@
 var path = require('path');
 var gulp = require('gulp');
 var conf = require('./conf');
+var babel = require('gulp-babel');
 
 var $ = require('gulp-load-plugins')();
 var wiredep = require('wiredep').stream;
@@ -22,6 +23,9 @@ gulp.task('build:specs', ['partial:specs'], function () {
   ];
 
   var injectScripts = gulp.src(injectNonMockE2EScripts)
+    .pipe(babel({
+      presets: ['es2015']
+    }))
     .pipe($.angularFilesort()).on('error', conf.errorHandler('AngularFilesort'));
 
   var injectOptions = {

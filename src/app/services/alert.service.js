@@ -1,20 +1,25 @@
 (function () {
   'use strict';
 
+  class AlertService {
+    constructor() {
+      this.alerts = [];
+    }
+
+    addAlert(alert) {
+      this.alerts.push(alert);
+    }
+
+    closeAlert(index) {
+      this.alerts.splice(index, 1);
+    }
+
+    static instance(){
+      return new AlertService();
+    }
+  }
+
   angular
     .module('petstore')
-    .service('alertService', alertService);
-
-  /** @ngInject */
-  function alertService() {
-    this.alerts = [];
-
-    this.addAlert = function (alert) {
-      this.alerts.push(alert);
-    };
-
-    this.closeAlert = function (index) {
-      this.alerts.splice(index, 1);
-    };
-  }
+    .factory('alertService', AlertService.instance);
 })();

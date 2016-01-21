@@ -30,9 +30,9 @@
       function search() {
         vm.busy = true;
 
-        Pet.get({'petId': vm.petId}).$promise.then(function (aPet) {
+        Pet.get({'petId': vm.petId}).$promise.then((aPet) => {
           petActive.pet = aPet;
-        })['finally'](function () {
+        }).finally(() => {
           vm.busy = false;
         });
       }

@@ -1,17 +1,14 @@
 (function() {
   'use strict';
 
-  angular
-    .module('petstore')
-    .directive('home', home);
-
-  /** @ngInject */
-  function home() {
-    var directive = {
+  const home = () => {
+    return {
       restrict: 'EA',
       templateUrl: 'app/states/home/home.html'
     };
+  };
 
-    return directive;
-  }
+  angular
+    .module('petstore')
+    .directive('home', home);
 })();

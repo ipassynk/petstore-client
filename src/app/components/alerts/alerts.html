@@ -2,7 +2,7 @@
   <div ng-show="vm.alerts.length">
     <alert ng-repeat="alert in vm.alerts" role="alert" tabindex="0"
            type="{{alert.type}}" close="vm.closeAlert($index)">
-      {{ alert.msg }}
+      {{ ::alert.msg }}
       <span class="sr-only">Click on close button to hide message</span>
     </alert>
   </div>

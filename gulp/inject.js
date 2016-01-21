@@ -4,6 +4,7 @@ var path = require('path');
 var gulp = require('gulp');
 var conf = require('./conf');
 var argv = require('yargs').argv;
+var babel = require('gulp-babel');
 
 var $ = require('gulp-load-plugins')();
 
@@ -34,6 +35,9 @@ gulp.task('inject', ['scripts', 'styles'], function () {
   ];
 
   var injectScripts = gulp.src(argv.mock ? mockScripts : noMockScripts)
+    .pipe(babel({
+      presets: ['es2015']
+    }))
   .pipe($.angularFilesort()).on('error', conf.errorHandler('AngularFilesort'));
 
   var injectOptions = {

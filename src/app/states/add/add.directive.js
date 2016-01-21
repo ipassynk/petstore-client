@@ -1,17 +1,15 @@
 (function() {
   'use strict';
 
+  const add = () => {
+    return {
+      restrict: 'EA',
+      templateUrl: 'app/states/add/add.html'
+    };
+  };
+
   angular
     .module('petstore')
     .directive('add', add);
 
-  /** @ngInject */
-  function add() {
-    var directive = {
-      restrict: 'EA',
-      templateUrl: 'app/states/add/add.html'
-    };
-
-    return directive;
-  }
 })();

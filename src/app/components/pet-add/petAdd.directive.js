@@ -44,9 +44,9 @@
         });
 
         vm.busy = true;
-        pet.$save().then(function (resp) {
+        pet.$save().then((resp) => {
           alertService.addAlert({type: 'success', msg: "Well done! You successfully added " + vm.data.name});
-          reset();
+        reset();
         })['catch'](function () {
           alertService.addAlert({type: 'danger', msg: "Sorry, the operation is failed. Try again!"});
         }) ['finally'](function () {
