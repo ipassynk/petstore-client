@@ -16,6 +16,9 @@
     "ng-flow": "~2.6.1",
     "angular-mocks": "~1.4.7"
   },
+  "authors": [
+    "Julia Passynkova"
+  ]
   "overrides": {
     "bootstrap": {
       "main": [
