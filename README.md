@@ -16,7 +16,7 @@ The applications uses:
 
 * route-ui for routing between home and add pages
 * mocke2e for mocking all api
-* 9 unit tests for controllers, directives
+* unit tests for controllers, directives
 * Accessibility for thumbnail that is controller by search button, hidden areas, busy button 
 
 
